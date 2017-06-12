@@ -2,6 +2,7 @@ package cb.rc
 
 import com.evalab.core.cli.Command
 import com.evalab.core.cli.exception.OptionException
+
 //import redis.clients.jedis.Jedis
 
 fun main(args: Array<String>) {
@@ -17,10 +18,11 @@ fun main(args: Array<String>) {
         System.exit(2)
     }
 
-    val currency = command.getStringValue("currency", "ETH")
-    val lbound = command.getIntegerValue("lbound")
+    val currency = command.getStringValue("currency", "ETH") as String
+    val lbound = command.getIntegerValue("lbound", 50)
 
-    val r = khttp.get("https://api.coinbase.com/v2/exchange-rates?currency=$currency")
-    val usd = r.jsonObject.getJSONObject("data").getJSONObject("rates").getString("USD")
+
+    val usd = get_currency_value(currency)
     println(usd)
+
 }
