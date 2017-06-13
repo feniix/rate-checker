@@ -29,7 +29,7 @@ fun main(args: Array<String>) {
     val delay = command.getLongValue("check-delay", 5) as Long
 
     while (true) {
-        println(coinbase().ethRate)
+        println(Coinbase().ethRate)
         TimeUnit.MINUTES.sleep(delay)
     }
 

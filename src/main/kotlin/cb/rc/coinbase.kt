@@ -10,7 +10,7 @@ import java.math.BigDecimal
 
 private val logger = KotlinLogging.logger {}
 
-class coinbase() {
+class Coinbase() {
     private val now = LocalDateTime.now()
     private val payload  = JsonParser().parse(getCurrencyValue())
 
