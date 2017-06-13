@@ -46,4 +46,5 @@ dependencies {
     compile 'org.slf4j:slf4j-simple:1.7.25'
     compile 'redis.clients:jedis:2.9.0'
     compile 'com.github.thomasnield:kotlin-statistics:2df518964f'
+    compile 'com.github.salomonbrys.kotson:kotson:2.5.0'
 }
